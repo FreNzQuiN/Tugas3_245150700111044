@@ -86,10 +86,11 @@ class PengirimanBarang {
 
     // --- DISPLAY DATA PENGIRIM --- \\
     public void displayPengirim() {
+        NumberFormat rupiah = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
         System.out.println("Nama Pengirim "+kodePengirim+"\t: " + namaPengirim);
         System.out.println("Alamat Tujuan\t: " + alamatTujuan);
         System.out.println("Berat Barang\t: " + berat + " kg");
-        System.out.println("Biaya Dasar\t: " + biayaDasar);
+        System.out.println("Biaya Dasar\t: " + rupiah.format(biayaDasar));
         System.out.println();
     }
 }
