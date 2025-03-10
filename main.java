@@ -110,11 +110,14 @@ public class main {
 
         NumberFormat rupiah = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
         // -- PENGIRIMAN SATU -- \\
-        System.out.println("Ongkos kirim (diskon 10%): " + rupiah.format(pengiriman1.hitungOngkir(10.0)));
-        System.out.println("Ongkos kirim (jarak 60 km): " + rupiah.format(pengiriman1.hitungOngkir(60)));
+        System.out.println("== PENGIRIMAN SATU ==");
+        System.out.println("Ongkos kirim (diskon [-10%]): " + rupiah.format(pengiriman1.hitungOngkir(10.0)));
+        System.out.println("Ongkos kirim (jarak 60 km [+10%]): " + rupiah.format(pengiriman1.hitungOngkir(60)));
+        System.out.println();
         // -- PENGIRIMAN DUA -- \\
-        System.out.println("Ongkos kirim (diskon 5%, biaya tambahan 50000): " + rupiah.format(pengiriman2.hitungOngkir(5.0, 50000.0)));
-        System.out.println("Ongkos kirim (jarak 30 km): " + rupiah.format(pengiriman2.hitungOngkir(30)));
+        System.out.println("== PENGIRIMAN DUA ==");
+        System.out.println("Ongkos kirim (diskon [-5%], biaya tambahan [+50000]): " + rupiah.format(pengiriman2.hitungOngkir(5.0, 50000.0)));
+        System.out.println("Ongkos kirim (jarak 30 km [-5%]): " + rupiah.format(pengiriman2.hitungOngkir(30)));
         System.out.println();
         
 
