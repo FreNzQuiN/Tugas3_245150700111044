@@ -108,7 +108,7 @@ public class main {
         pengiriman1.displayPengirim();
         pengiriman2.displayPengirim();
 
-        System.out.println("---- HITUNG ONGKOS KIRIM -----");
+        System.out.println("------ OPSI ONGKOS KIRIM -----");
         System.out.println("------------------------------");
         NumberFormat rupiah = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
         // -- PENGIRIMAN SATU -- \\
