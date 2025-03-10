@@ -48,7 +48,8 @@ class PengirimanBarang {
         System.out.println("------------------------------");
     }
     public static void displayJumlahPengirim() {
-        System.out.println("Jumlah Pengirim: " + jumlahPengirim);
+        System.out.println("Jumlah Pengirim\t: " + jumlahPengirim);
+        System.out.println("------------------------------");
     } 
     
     // --- SETTER GETTER --- \\
@@ -80,12 +81,12 @@ class PengirimanBarang {
         return jumlahPengirim;
     }
 
-    // --- DISPLAY PENGIRIM --- \\
+    // --- DISPLAY DATA PENGIRIM --- \\
     public void displayPengirim() {
-        System.out.println("Nama Pengirim: " + namaPengirim);
-        System.out.println("Alamat Tujuan: " + alamatTujuan);
-        System.out.println("Berat Barang: " + berat + " kg");
-        System.out.println("Biaya Dasar: " + biayaDasar);
+        System.out.println("Nama Pengirim\t: " + namaPengirim);
+        System.out.println("Alamat Tujuan\t: " + alamatTujuan);
+        System.out.println("Berat Barang\t: " + berat + " kg");
+        System.out.println("Biaya Dasar\t: " + biayaDasar);
         System.out.println();
     }
 }
@@ -106,8 +107,9 @@ public class main {
         PengirimanBarang.displayJumlahPengirim();
         pengiriman1.displayPengirim();
         pengiriman2.displayPengirim();
-        System.out.println();
 
+        System.out.println("---- HITUNG ONGKOS KIRIM -----");
+        System.out.println("------------------------------");
         NumberFormat rupiah = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
         // -- PENGIRIMAN SATU -- \\
         System.out.println("== PENGIRIMAN SATU ==");
@@ -120,7 +122,6 @@ public class main {
         System.out.println("Ongkos kirim (jarak 30 km [-5%]): " + rupiah.format(pengiriman2.hitungOngkir(30)));
         System.out.println();
         
-
         // --- DISPLAY STATIC METHOD --- \\
         PengirimanBarang.displayInfoLogistik(); 
     }
