@@ -6,8 +6,9 @@ class PengirimanBarang {
     private String alamatTujuan;
     private double berat;
     private double biayaDasar;
+    private int kodePengirim;
     private static int jumlahPengirim = 0;
-    
+
     // --- CONSTRUCTOR OVERLOAD --- \\
     public PengirimanBarang() {
         this.namaPengirim = "";
@@ -15,6 +16,7 @@ class PengirimanBarang {
         this.berat = 0.0;
         this.biayaDasar = 0.0;
         jumlahPengirim++;
+        kodePengirim=jumlahPengirim;
     }
     public PengirimanBarang(String namaPengirim, String alamatTujuan, double berat, double biayaDasar) {
         this.namaPengirim = namaPengirim;
@@ -22,6 +24,7 @@ class PengirimanBarang {
         this.berat = berat;
         this.biayaDasar = biayaDasar;
         jumlahPengirim++;
+        kodePengirim=jumlahPengirim;
     }
 
     // --- OVERLOADING METHOD --- \\
@@ -51,7 +54,7 @@ class PengirimanBarang {
         System.out.println("Jumlah Pengirim\t: " + jumlahPengirim);
         System.out.println("------------------------------");
     } 
-    
+
     // --- SETTER GETTER --- \\
     public String getNamaPengirim() { 
         return namaPengirim;
@@ -83,7 +86,7 @@ class PengirimanBarang {
 
     // --- DISPLAY DATA PENGIRIM --- \\
     public void displayPengirim() {
-        System.out.println("Nama Pengirim\t: " + namaPengirim);
+        System.out.println("Nama Pengirim "+kodePengirim+"\t: " + namaPengirim);
         System.out.println("Alamat Tujuan\t: " + alamatTujuan);
         System.out.println("Berat Barang\t: " + berat + " kg");
         System.out.println("Biaya Dasar\t: " + biayaDasar);
@@ -108,7 +111,7 @@ public class main {
         pengiriman1.displayPengirim();
         pengiriman2.displayPengirim();
 
-        System.out.println("------ OPSI ONGKOS KIRIM -----");
+        System.out.println("---- OPSI ONGKOS KIRIM -----");
         System.out.println("------------------------------");
         NumberFormat rupiah = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
         // -- PENGIRIMAN SATU -- \\
@@ -121,7 +124,7 @@ public class main {
         System.out.println("Ongkos kirim (diskon [-5%], biaya tambahan [+50000]): " + rupiah.format(pengiriman2.hitungOngkir(5.0, 50000.0)));
         System.out.println("Ongkos kirim (jarak 30 km [-5%]): " + rupiah.format(pengiriman2.hitungOngkir(30)));
         System.out.println();
-        
+
         // --- DISPLAY STATIC METHOD --- \\
         PengirimanBarang.displayInfoLogistik(); 
     }
